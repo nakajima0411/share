@@ -1,0 +1,2 @@
+module GouttesHelper
+end

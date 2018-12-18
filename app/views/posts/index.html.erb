@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+   <div class="col-xs-6">
+
+     <p id="notice"><%= notice %></p>
+
+     <div class="searchbox">
+       <%= search_form_for @search do |f| %>
+       <div class="form-group">
+        <%= f.label :title_cont, "タイトル" %>
+        <%= f.text_field :title_cont, class: "form-control" %>
+       </div>
+      <div class="form-group">
+        <%= f.label :genre_cont, "ジャンル" %>
+        <%= f.text_field :genre_cont, class: "form-control" %>
+      </div>
+      <div class="actions"><%= f.submit "検索" %></div>
+      <% end %>
+     </div>
+   </div>
+  </div>
+  <div class="row">
+   <div class="col-xs-12">
+    <div class="indexbox">
+     <h3>投稿一覧</h3>
+
+     <% if @posts.blank? %>
+     <p>検索結果が一致するものがありませんでした</p>
+     <% end %>
+
+     <table class="table table-hover table-inverse">
+      <thead>
+        <tr>
+          <th><%= sort_link(@search, :title, "Title") %></th>
+          <th><%= sort_link(@search, :genre, "Genre") %></th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @posts.each do |post| %>
+        <tr>
+          <td><%= link_to post.title, post_path(post.id) %></td>
+          <td><%= post.genre %></td>
+          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: '消してよろしいですか？' } %></td>
+        </tr>
+        <% end %>
+      </tbody>
+     </table>
+    </div>
+  </div>
+ </div>
+</div>

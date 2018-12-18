@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Share</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" >
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <header>
+     <nav>
+      <% if user_signed_in? %>
+        <li class="">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </li>
+        <li class="">
+          <%= link_to '投稿フォーム', new_post_path %>
+        </li>
+        <li class="">
+          <%= link_to 'Topページ', posts_path %>
+        </li>
+        <li class="">
+          <%= link_to 'マイページ', user_path(current_user) %>
+        </li>
+      <% else %>
+        <li class="">
+          <%= link_to '投稿フォーム', new_post_path %>
+        </li>
+        <li class="">
+          <%= link_to 'Topページ', posts_path %>
+        </li>
+        <li class="">
+          <%= link_to "新規登録", new_user_registration_path %>
+        </li>
+        <li class="">
+          <%= link_to "ログイン", new_user_session_path %>
+        </li>
+      <% end %>
+      </ul>
+     </nav>
+    </header>
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-xs-3">
+       <h2>User info</h2>
+       <%= attachment_image_tag @user, :profile_image, format: 'jpeg', fallback: "no_image.png", alt: "No image", size: '100x100' %>
+       <table class="table">
+         <tbody>
+           <tr>
+             <th>ネーム</th>
+             <td><%= @user.name %></td>
+           </tr>
+           <% if @user == current_user %>
+           <tr>
+             <th>email</th>
+             <td><%= @user.email %></td>
+           </tr>
+           <tr>
+           	<th><%= link_to '編集', edit_user_path(current_user) %></th>
+           </tr>
+           <% end %>
+         </tbody>
+       </table>
+       <div class="row">
+           <% if @user == current_user %>
+           <p><%= link_to "", edit_user_path(@user), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench" %></p>
+           <% end %>
+       </div>
+    </div>
+
+    <div class="col-xs-9">
+      <h2>投稿一覧</h2>
+      <table class="table table-hover table-inverse">
+        <thead>
+         <tr>
+           <th>タイトル</th>
+           <th>ジャンル</th>
+         </tr>
+        </thead>
+
+       <% @posts.each do |post| %>
+          <tbody>
+           <tr>
+            <td><%= link_to post.title, post_path(post.id),
+              class: "show_#{post.id}" %></td>
+            <td><%= post.genre %></td>
+           </tr>
+          </tbody>
+       <% end %>
+      </table>
+    </div>
+  </div>
+</div>

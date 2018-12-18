@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @goutte.user_id %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @goutte.comment_id %>
+</p>
+
+<%= link_to 'Edit', edit_goutte_path(@goutte) %> |
+<%= link_to 'Back', gouttes_path %>

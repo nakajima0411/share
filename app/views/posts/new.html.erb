@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+     <div class="col-xs-8">
+       <h2>新規投稿</h2>
+
+       <div class="new_box">
+        <%= form_for @post do |f| %>
+         <table class="table table-hover table-inverse">
+          <tr>
+            <th><%= f.label :タイトル %></th>
+            <td><%= f.text_area :title, size: "60x2" %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :分類 %></th>
+            <td><%= f.text_field :genre, size: "50x1" %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :内容 %></th>
+            <td><%= f.text_area :text, size: "60x8" %></td>
+          </tr>
+          <tr>
+            <th><%= f.submit '投稿'%></th>
+            <td></td>
+          </tr>
+         </table>
+        <% end %>
+       </div>
+     </div>
+  </div>
+</div>

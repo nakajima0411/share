@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gouttes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gouttes.each do |goutte| %>
+      <tr>
+        <td><%= goutte.user_id %></td>
+        <td><%= goutte.comment_id %></td>
+        <td><%= link_to 'Show', goutte %></td>
+        <td><%= link_to 'Edit', edit_goutte_path(goutte) %></td>
+        <td><%= link_to 'Destroy', goutte, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Goutte', new_goutte_path %>

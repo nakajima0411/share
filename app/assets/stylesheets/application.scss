@@ -1,0 +1,124 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#notice {
+  color: green;
+}
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px 7px 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+body {
+  font-family: verdana, arial, helvetica, sans-serif;
+  line-height: 18px;
+}
+header {
+	width: 100%;
+	margin:0 auto;
+	background-color: black;
+}
+
+nav {
+	font-family: 'Playfair Display', serif;
+	height: 20px;
+}
+li {
+	font-size: 12px;
+	color:white;
+	float: right;
+}
+li a {
+  color: white;
+}
+li a:visited {
+	color: white;
+}
+li a:hover {
+	text-decoration: none;
+}
+
+.searchbox {
+    width: 100%;
+    margin:0 auto;
+    padding-bottom: 20px;
+}
+.indexbox {
+   width: 100%;
+   margin:0 auto;
+   border: solid 1px #333;
+   border-radius: 10px;
+}
+
+.new_box{
+  padding: 0 10px 10px;
+  background-color: #eee;
+  border-radius: 10px;
+}
+.title {
+  padding: 10px;
+}
+.show_box {
+  padding: 10px;
+}
+.box {
+  width: 100%;
+}
+.name {
+  float: left;
+  font-size: 10px;
+}
+.post_cre {
+  float: right;
+  font-size: 10px;
+}
+.text {
+  width: 100%;
+  font-size: 20px;
+}
+.show_padding {
+  padding-top: 20px;
+}
+.answer {
+  border-bottom : solid 2px #333;
+}
+.comment {
+  padding: 10px 10px 0;
+  background-color: #eee;
+  border-radius: 10px;
+}
+.comment_user {
+  float: left;
+  font-size: 10px;
+}
+.comment_cre {
+  float: right;
+  font-size: 10px;
+}
+.comment_come {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 20px;
+}
