@@ -41,9 +41,16 @@ header {
 	background-color: black;
 }
 
+.title{
+  font-size: 15px;
+}
+.title a{
+  color:white;
+}
 nav {
 	font-family: 'Playfair Display', serif;
-	height: 20px;
+	height: 40px;
+  padding-top: 12px;
 }
 li {
 	font-size: 12px;

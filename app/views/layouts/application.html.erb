@@ -13,36 +13,41 @@
 
   <body>
     <header>
-     <nav>
-      <% if user_signed_in? %>
-        <li class="">
-          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-        </li>
-        <li class="">
-          <%= link_to '投稿フォーム', new_post_path %>
-        </li>
-        <li class="">
-          <%= link_to 'Topページ', posts_path %>
-        </li>
-        <li class="">
-          <%= link_to 'マイページ', user_path(current_user) %>
-        </li>
-      <% else %>
-        <li class="">
-          <%= link_to '投稿フォーム', new_post_path %>
-        </li>
-        <li class="">
-          <%= link_to 'Topページ', posts_path %>
-        </li>
-        <li class="">
-          <%= link_to "新規登録", new_user_registration_path %>
-        </li>
-        <li class="">
-          <%= link_to "ログイン", new_user_session_path %>
-        </li>
-      <% end %>
-      </ul>
-     </nav>
+    <div class="container">
+     <div class="row">
+      <div class="col-xs-3">
+       <p class="title"><%= link_to 'Rails掲示板', posts_path %></p>
+      </div>
+      <div class="col-xs-9 clearfix">
+       <nav>
+        <% if user_signed_in? %>
+          <li class="">
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+          </li>
+          <li class="">
+            <%= link_to '投稿フォーム　', new_post_path %>
+          </li>
+          <li class="">
+            <%= link_to 'Topページ　', posts_path %>
+          </li>
+          <li class="">
+            <%= link_to 'マイページ　', user_path(current_user) %>
+          </li>
+        <% else %>
+          <li class="">
+            <%= link_to 'Topページ', posts_path %>
+          </li>
+          <li class="">
+            <%= link_to "新規登録　", new_user_registration_path %>
+          </li>
+          <li class="">
+            <%= link_to "ログイン　", new_user_session_path %>
+          </li>
+        <% end %>
+       </nav>
+       </div>
+      </div>
+    </div>
     </header>
     <%= yield %>
   </body>
