@@ -42,7 +42,6 @@
         <tr>
           <td><%= link_to post.title, post_path(post.id) %></td>
           <td><%= post.genre %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: '消してよろしいですか？' } %></td>
         </tr>
         <% end %>
       </tbody>

@@ -6,4 +6,6 @@ class Comment < ApplicationRecord
 	def goutted_by?(user)
 		gouttes.where(user_id: user.id).exists?
 	end
+
+	validates :comments, presence: true
 end
